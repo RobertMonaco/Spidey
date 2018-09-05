@@ -13,7 +13,7 @@ def spidey(request):
 
             return redirect('/')
     else:
-        form = DocumentForm()
+        form = ImageForm()
     return render(request, 'spidey/spidey.html', {
         'form': form
     })
