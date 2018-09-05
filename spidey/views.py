@@ -9,7 +9,9 @@ def spidey(request):
         if form.is_valid():
             form.save()
 
-            labels = analyze()
+            for filename, file in request.FILES.iteritems():
+                name = request.FILES[filename].name
+                print(filename + " - " + name)
 
             return redirect('/')
     else:
