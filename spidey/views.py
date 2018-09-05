@@ -10,7 +10,7 @@ def spidey(request):
             form.save()
 
             file = request.FILES['pic']
-            file_path = "static/uploads/" + file.name.replace(" ", "_")
+            file_path = "static/uploads/" + file.name.replace(" ", "_").replace("(", "").replace(")", "")
 
             # labels = analyze(file_path)
             labels = ['cool', 'fun', 'spidery']
