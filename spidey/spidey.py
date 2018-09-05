@@ -4,39 +4,29 @@
 ######################################################################################
 import io
 import os
-import google-cloud-vision
+import google.cloud.vision
 from google.cloud.vision import types
-from google.cloud.vision import ImageAnnotatorClient()
-import django
+from google.cloud.vision import ImageAnnotatorClient
 import PIL
 from PIL import Image
 
-def main():
-    file_path = ''
-    
-    #Django stuff
 
-    #Django gets filepath
+def analyze(file_path):
 
-    #Pass image into Google API
-    #Instatiate client
+    # Pass image into Google API
+    # Instatiate client
     cl = ImageAnnotatorClient()
 
-    #Load image into memory
+    # Load image into memory
     with io.open(file_path, 'rb') as img_file:
         img_content = img_file.read()
 
-    #Import image
+    # Import image
     img = types.Image(content=img_content)
 
-    #Get response from client, assign labels
+    # Get response from client, assign labels
     resp = cl.label_detection(image=img)
     labels = resp.label_annotations
 
-    #Print results
-    print('Labels:')
-    for label in labels:
-        print(label.description)
-
-if __name__ == '__main__':
-    main()
+    # return results
+    return labels

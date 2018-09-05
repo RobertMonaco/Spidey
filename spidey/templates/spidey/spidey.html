@@ -1,0 +1,28 @@
+{% load static %}
+
+<html>
+	<head>
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="{% static 'css/spidey.css' %}">
+
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+        <script src="{% static 'js/spidey.js' %}"></script>
+    </head>
+	<body>
+		<h3 class="title">SPIDEY</h3>
+        <p class = "subtitle">Upload a picture of a spider and Spider will tell you what kind of spider it is, and whether or not it is dangerous!</p>
+        {% block content %}
+            <div class="spider-form">
+                <form method="post" enctype="multipart/form-data">
+
+                  {% csrf_token %}
+
+                      {{ form.as_p }}
+
+                  <button class="btn btn-primary btn-lg" type="submit">Analyze Spider</button>
+                </form>
+            </div>
+        {% endblock %}
+	</body>
+</html>
