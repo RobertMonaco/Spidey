@@ -8,21 +8,19 @@
 
         <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
         <script src="{% static 'js/spidey.js' %}"></script>
+        <title>Spidey</title>
     </head>
 	<body>
 		<h3 class="title">SPIDEY</h3>
-        <p class = "subtitle">Upload a picture of a spider and Spider will tell you what kind of spider it is, and whether or not it is dangerous!</p>
+
         {% block content %}
-            <div class="spider-form">
-                <form method="post" enctype="multipart/form-data">
+            {% if image != "" %}
+                {% include "spidey/spiderform.html" with image=image labels=labels %}
+            {% else %}
+                <p class = "description">Upload a picture of a spider and Spidey will tell you what kind of spider it is, and whether or not it is dangerous!</p>
+            {% endif %}
 
-                  {% csrf_token %}
-
-                      {{ form.as_p }}
-
-                  <button class="btn btn-primary btn-lg" type="submit">Analyze Spider</button>
-                </form>
-            </div>
+            {% include "spidey/uploadform.html" %}
         {% endblock %}
 	</body>
 </html>

@@ -7,13 +7,23 @@
 	margin-top: 25px;
 }
 
-.subtitle
+.description
 {
     width: 80%;
     max-width: 600px;
     margin: auto;
     text-align: center;
     font-size: 20px;
+    font-family: arial;
+}
+
+.subtitle
+{
+    width: 80%;
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+    font-size: 30px;
     font-family: arial;
 }
 
@@ -27,12 +37,16 @@ label:not(.input-group-btn)
     overflow: hidden;
 }
 
-.spider-form {
+.upload-form, .spider-form {
     width: 50%;
     max-width: 500px;
     margin: auto;
     text-align: center;
     margin-top: 20px;
+}
+
+.spider-form img {
+    max-width: 100%;
 }
 
 input[type=file] {

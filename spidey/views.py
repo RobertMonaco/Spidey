@@ -10,12 +10,20 @@ def spidey(request):
             form.save()
 
             file = request.FILES['pic']
+            file_path = "static/uploads/" + file.name.replace(" ", "_")
 
-            analyze("spidey/SpiderPics/" + file.name)
+            # labels = analyze(file_path)
+            labels = ['cool', 'fun', 'spidery']
 
-            return redirect('/')
+            return render(request, 'spidey/spidey.html', {
+                'form': form,
+                'image': file_path,
+                'labels': labels
+            })
     else:
         form = ImageForm()
     return render(request, 'spidey/spidey.html', {
-        'form': form
+        'form': form,
+        'image': '',
+        'labels': []
     })
