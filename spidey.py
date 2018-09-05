@@ -2,6 +2,7 @@
 #Robert Monaco - Cody Poteet - Daniel Schon - Daniel Chambers - Lilia Williams
 #Software Engineer I - Rafal Jabrzemski
 ######################################################################################
+import google-cloud-vision
 
 def main():
     pass
