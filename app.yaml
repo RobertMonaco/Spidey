@@ -1,0 +1,19 @@
+# [START django_app]
+runtime: python37
+api_version: 1
+
+handlers:
+- url: /static
+  static_dir: static/
+- url: .*
+  script: main.wsgi.application
+
+entrypoint: gunicorn -b :$PORT main.wsgi
+
+beta_settings:
+    cloud_sql_instances: cs4263spidey:us-central1:spideydb
+# Only pure Python libraries can be vendored
+# Python libraries that use C extensions can
+# only be included if they are part of the App Engine SDK
+# Using Third Party Libraries: https://cloud.google.com/appengine/docs/python/tools/using-libraries-python-27
+# [END django_app]- ^env/.*$
