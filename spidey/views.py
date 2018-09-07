@@ -1,7 +1,10 @@
 from django.shortcuts import render, redirect
 from spidey.forms import ImageForm
 from spidey.spidey import analyze
+from google.cloud import storage
 
+
+MY_BUCKET = 'cs4263spidey'
 
 def spidey(request):
     if request.method == 'POST':
@@ -9,15 +12,21 @@ def spidey(request):
         if form.is_valid():
             form.save()
 
-            file = request.FILES['pic']
-            file_path = "static/uploads/" + file.name.replace(" ", "_").replace("(", "").replace(")", "")
+            filename = request.FILES['pic'].name.replace(" ", "_").replace("(", "").replace(")", "")
+
+            # Upload file to gcloud storage
+            #storage_client = storage.Client()
+            #bucket = storage_client.get_bucket(MY_BUCKET)
+            #blob = bucket.blob(filename)
+
+            #blob.upload_from_filename('/tmp/uploads/' + filename)
 
             # labels = analyze(file_path)
             labels = ['cool', 'fun', 'spidery']
 
             return render(request, 'spidey/spidey.html', {
                 'form': form,
-                'image': file_path,
+                'image': 'uploads/' + filename,
                 'labels': labels
             })
     else:
