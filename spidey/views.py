@@ -7,6 +7,7 @@ from django.core.files.storage import default_storage
 
 MY_BUCKET = 'cs4263spidey'
 
+
 def spidey(request):
     if request.method == 'POST':
         form = ImageForm(request.POST, request.FILES)
@@ -15,18 +16,17 @@ def spidey(request):
 
             filename = 'uploads/' + request.FILES['pic'].name.replace(" ", "_").replace("(", "").replace(")", "")
 
-            labels = analyze('static/' + filename)
-            #labels = ['cool', 'fun', 'spidery']
+            spider = analyze('static/' + filename)
 
             return render(request, 'spidey/spidey.html', {
                 'form': form,
                 'image': filename,
-                'labels': labels
+                'spider': spider
             })
     else:
         form = ImageForm()
     return render(request, 'spidey/spidey.html', {
         'form': form,
         'image': '',
-        'labels': []
+        'spider': None
     })

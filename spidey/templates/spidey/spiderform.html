@@ -1,13 +1,21 @@
 {% load static %}
 
 <div class="spider-form">
-    <h3 class="subtitle">Your Spider:</h3>
+
 
     <img src="{% static image %}"/>
+    <div class="venom">
+        <img src="{% static spider.icon_path %}">
+        <h3 class="subtitle">{{ spider.type_spider }}</h3>
+    </div>
 
-    {% for label in labels %}
-        <p class="label"> {{label}} </p>
-    {% endfor %}
+    {% if spider.com_name != "" %}
+        <div class="names">
+            <p class = "description">Name: {{ spider.com_name }}</p>
+            <p class = "description">{{ spider.sci_name }}</p>
+        </div>
+    {% endif %}
 
+    <p class = "label"> {{ spider.help_text }}</p>
     <p class = "description">Upload a different spider:</p>
 </div>
