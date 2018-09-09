@@ -16,7 +16,7 @@ def spidey(request):
 
             filename = 'uploads/' + request.FILES['pic'].name.replace(" ", "_").replace("(", "").replace(")", "")
 
-            spider = Spider("Wolf Spider", "Spiderus wolfium", "Nonvenomous", "If you get bit then you might as well just do nothing cause there is no poison in this boy.", "icons/unknown.png")#analyze('static/' + filename)
+            spider = analyze('static/' + filename)
 
             return render(request, 'spidey/spidey.html', {
                 'form': form,
