@@ -11,7 +11,17 @@ handlers:
 entrypoint: gunicorn -b :$PORT main.wsgi
 
 beta_settings:
-    cloud_sql_instances: cs4263spidey:us-central1:spideydb
+    cloud_sql_instances: cs4263spidey:us-central1:spideydbmysql
+
+env_variables:
+
+    # Replace user, password, database, and instance connection name with the values obtained
+
+    # when configuring your Cloud SQL instance.
+
+
+    SQLALCHEMY_DATABASE_URI: >-
+      mysql+pymysql://mysql.sys:spideyrules@/DATABASE?unix_socket=/cloudsql/cs4263spidey:us-central1:spideydbmysql
 # Only pure Python libraries can be vendored
 # Python libraries that use C extensions can
 # only be included if they are part of the App Engine SDK

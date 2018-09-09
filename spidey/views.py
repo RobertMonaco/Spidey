@@ -1,7 +1,11 @@
 from django.shortcuts import render, redirect
 from spidey.forms import ImageForm
 from spidey.spidey import analyze
+from google.cloud import storage
+from django.core.files.storage import default_storage
 
+
+MY_BUCKET = 'cs4263spidey'
 
 def spidey(request):
     if request.method == 'POST':
@@ -9,15 +13,14 @@ def spidey(request):
         if form.is_valid():
             form.save()
 
-            file = request.FILES['pic']
-            file_path = "static/uploads/" + file.name.replace(" ", "_").replace("(", "").replace(")", "")
+            filename = 'uploads/' + request.FILES['pic'].name.replace(" ", "_").replace("(", "").replace(")", "")
 
-            # labels = analyze(file_path)
-            labels = ['cool', 'fun', 'spidery']
+            labels = analyze('static/' + filename)
+            #labels = ['cool', 'fun', 'spidery']
 
             return render(request, 'spidey/spidey.html', {
                 'form': form,
-                'image': file_path,
+                'image': filename,
                 'labels': labels
             })
     else:

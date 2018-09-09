@@ -6,11 +6,15 @@ import io
 import os
 import json
 import google-cloud-vision
+from google.cloud import vision
 from google.cloud.vision import types
 from google.cloud.vision import ImageAnnotatorClient
 import PIL
 from PIL import Image
+from google.cloud import storage
+from django.core.files.storage import default_storage
 
+MY_BUCKET = 'cs4263spidey'
 
 class Spider:
     def __init__(self):
@@ -47,9 +51,11 @@ def analyze(file_path):
     # Instatiate client
     cl = ImageAnnotatorClient()
 
-    # Load image into memory
-    with io.open(file_path, 'rb') as img_file:
-        img_content = img_file.read()
+    # Load image into memory from cloud storage
+    client = storage.Client()
+    bucket = client.get_bucket(MY_BUCKET) 
+    blob = bucket.get_blob(file_path)
+    img_content = blob.download_as_string()
 
     # Import image
     img = types.Image(content=img_content)
@@ -71,3 +77,4 @@ def analyze(file_path):
             
     # return results
     return labels
+
