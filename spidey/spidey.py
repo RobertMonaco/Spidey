@@ -5,7 +5,6 @@
 import io
 import os
 import json
-import google-cloud-vision
 from google.cloud import vision
 from google.cloud.vision import types
 from google.cloud.vision import ImageAnnotatorClient
@@ -84,7 +83,5 @@ def analyze(file_path):
             return Spider()
         else:
             return Spider("", "","Uhhh...","Spidey could not identify a spider in this picture","status/icons/notaspider.png")
-            
-    # return results
-    return labels
+
 
