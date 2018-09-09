@@ -48,7 +48,7 @@ class Spider:
 
 
 def analyze(file_path):
-    spider_json_path = 'spiders.JSON'
+    spider_json_path = 'spidey/spiders.JSON'
     spider_dict = json.loads(open(spider_json_path).read())
 
     # Pass image into Google API
