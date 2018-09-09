@@ -73,11 +73,16 @@ WSGI_APPLICATION = 'main.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'HOST': '/cloudsql/cs4263spidey:us-central1:spideydbmysql',
+        'NAME': 'spideydbmysql',
+        'USER': 'root',
+        'PORT': 3306,
+        'PASSWORD': 'spideyrules',
     }
 }
 
+GOOGLE_APPLICATION_CREDENTIALS='/home/dlschon0/Spidey/cs4263spidey-eba18396f339.json'
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators

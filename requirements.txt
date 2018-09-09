@@ -1,7 +1,11 @@
 Django~=2.0.6
+ez_setup
 google-cloud
 google-cloud-vision
 google-cloud-storage
 django-storages
 Pillow
 gunicorn==19.7.1
+mysqlclient
+cloudstorage
+webapp2

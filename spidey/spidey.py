@@ -4,12 +4,15 @@
 ######################################################################################
 import io
 import os
-import google-cloud-vision
+from google.cloud import vision
 from google.cloud.vision import types
 from google.cloud.vision import ImageAnnotatorClient
 import PIL
 from PIL import Image
+from google.cloud import storage
+from django.core.files.storage import default_storage
 
+MY_BUCKET = 'cs4263spidey'
 
 def analyze(file_path):
 
@@ -17,16 +20,18 @@ def analyze(file_path):
     # Instatiate client
     cl = ImageAnnotatorClient()
 
-    # Load image into memory
-    with io.open(file_path, 'rb') as img_file:
-        img_content = img_file.read()
+    # Load image into memory from cloud storage
+    client = storage.Client()
+    bucket = client.get_bucket(MY_BUCKET) 
+    blob = bucket.get_blob(file_path)
+    img_content = blob.download_as_string()
 
     # Import image
     img = types.Image(content=img_content)
 
     # Get response from client, assign labels
     resp = cl.label_detection(image=img)
-    resp.label_annotations
+    labels = resp.label_annotations
 
-    # return results
-    return labels
+    # return the list of label descriptions
+    return list(map(lambda label: label.description, labels))

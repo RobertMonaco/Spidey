@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.files.storage import default_storage
 
 
 class SpiderPic(models.Model):
