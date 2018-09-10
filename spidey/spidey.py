@@ -17,11 +17,11 @@ MY_BUCKET = 'cs4263spidey'
 
 class Spider:
     def __init__(self,name = "Unidentified Spider",latin = "Unknown",venomous = "Unknown",bit_text = "If bitten by an unidentified spider you should clean the wound, apply a compress, and consult a medical professional if pain persists.", icon_path = "static/icons/unknown.png"):
-        self.com_name = name
-        self.sci_name = latin
-        self.type_spider = venomous
-        self.help = bit_text
-        self.icon_path = icon_path
+        self.com_name = "Unidentified Spider"
+        self.sci_name = "Unknown"
+        self.type = "Unknown"
+        self.help = "If bitten by an unidentified spider you should clean the wound, apply a compress, and consult a medical professional if pain persists."
+        self.icon_path = "icons/unknown.png"
 
     def com_name(self):
         return self.com_name
@@ -68,13 +68,12 @@ def analyze(file_path):
             if str(entity.description) in spider_dict:
                 #Accepted spider
                 return Spider(str(entity.description),spider_dict[str(entity.description)]["Scientific Name"]
-                    ,spider_dict[str(entity.description)]["Type"],spider_dict[str(entity.description)]["Help"],"static/icons/" + spider_dict[str(entity.description)]["Type"].lower() +'.png')
+                    ,spider_dict[str(entity.description)]["Type"],spider_dict[str(entity.description)]["Help"],"icons/" + spider_dict[str(entity.description)]["Type"].lower() +'.png')
             if str(entity.description) == "Spider":
                 is_spider = True
         
         if is_spider:
             return Spider()
         else:
-            return Spider("", "","Uhhh...","Spidey could not identify a spider in this picture","status/icons/notaspider.png")
-
-
+            return Spider("", "","Uhhh...","Spidey could not identify a spider in this picture","icons/notaspider.png")
+            

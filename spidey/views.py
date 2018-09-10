@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from spidey.forms import ImageForm
-from spidey.spidey import analyze
+from spidey.spidey import analyze, Spider
 from google.cloud import storage
 from django.core.files.storage import default_storage
 

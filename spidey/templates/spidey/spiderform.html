@@ -6,7 +6,7 @@
     <img src="{% static image %}"/>
     <div class="venom">
         <img src="{% static spider.icon_path %}">
-        <h3 class="subtitle">{{ spider.type_spider }}</h3>
+	<h3 class="subtitle {{spider.type_spider}}">{{ spider.type_spider }}</h3>
     </div>
 
     {% if spider.com_name != "" %}
