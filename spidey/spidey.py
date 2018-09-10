@@ -69,7 +69,7 @@ def analyze(file_path):
                 #Accepted spider
                 return Spider(str(entity.description),spider_dict[str(entity.description)]["Scientific Name"]
                     ,spider_dict[str(entity.description)]["Type"],spider_dict[str(entity.description)]["Help"],"icons/" + spider_dict[str(entity.description)]["Type"].lower() +'.png')
-            if str(entity.description) == "Spider":
+            if str(entity.description).lower() == "spider":
                 is_spider = True
         
         if is_spider:
