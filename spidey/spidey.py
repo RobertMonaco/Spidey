@@ -66,7 +66,7 @@ def analyze(file_path):
         is_spider = False
         
         for entity in annotations.web_entities:
-            if entity == "Spider" or entity == "Tarantula":
+            if entity.description == "Spider" or entity.description == "Tarantula":
                 is_spider = True      
         if not is_spider:
             return Spider("", "","Uhhh...","Spidey could not identify a spider in this picture","icons/notaspider.png")
