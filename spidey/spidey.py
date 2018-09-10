@@ -54,9 +54,6 @@ def analyze(file_path):
     bucket = client.get_bucket(MY_BUCKET) 
     blob = bucket.get_blob(file_path)
     img_content = blob.download_as_string()
-    
-    logs = []
-    logs.append("filepath: " + file_path)
 
     # Import image
     img = types.Image(content=img_content)
@@ -68,19 +65,21 @@ def analyze(file_path):
     if annotations.web_entities:
         is_spider = False
         
-        logs.append("Keys: ")
         for entity in annotations.web_entities:
-            key = str(entity.description).lower()
-            logs.append(key)
+            if entity == "Spider" or entity == "Tarantula":
+                is_spider = True      
+        if not is_spider:
+            return Spider("", "","Uhhh...","Spidey could not identify a spider in this picture","icons/notaspider.png")
+
+        #Find out if the spider is in our dictionary   
+        for entity in annotations.web_entities:
+            key = str(entity.description).lower().replace('spider','').trim()
+
             if key in spider_dict:
                 #Accepted spider
                 return Spider(str(entity.description),spider_dict[key]["Scientific Name"],spider_dict[key]["Type"],spider_dict[key]["Help"],"icons/" + spider_dict[key]["Type"].lower() +'.png')
-            if key == "spider":
-                is_spider = True
         
-        logs.append("Is spider: " + str(is_spider))
         if is_spider:
             return Spider()
-        else:
-            return Spider("", "","Uhhh...","Spidey could not identify a spider in this picture","icons/notaspider.png")
-            
+    else:
+        return Spider("", "","Uhhh...","Spidey could not identify a spider in this picture","icons/notaspider.png")
