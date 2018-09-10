@@ -73,7 +73,7 @@ def analyze(file_path):
 
         #Find out if the spider is in our dictionary   
         for entity in annotations.web_entities:
-            key = str(entity.description).lower().replace('spider','').trim()
+            key = str(entity.description).lower().replace('spider','').strip()
 
             if key in spider_dict:
                 #Accepted spider
