@@ -62,19 +62,20 @@ def analyze(file_path):
     annotations = resp.web_detection
 
     if annotations.web_entities:
-        is_spider = False
-        
         for entity in annotations.web_entities:
-            key = str(entity.description).lower()
+            if entity == "Spider" or entity == "Tarantula":
+                is_spider = True      
+        if not is_spider:
+            return Spider("", "","Uhhh...","Spidey could not identify a spider in this picture","icons/notaspider.png")
+
+        #Find out if the spider is in our dictionary   
+        for entity in annotations.web_entities:
+            key = str(entity.description).lower().replace('spider','').trim()
             if key in spider_dict:
                 #Accepted spider
                 return Spider(str(entity.description),spider_dict[key]["Scientific Name"],spider_dict[key]["Type"],spider_dict[key]["Help"],"icons/" + spider_dict[key]["Type"].lower() +'.png')
-            if key == "spider":
-                is_spider = True
         
         if is_spider:
             return Spider()
-        else:
-            return Spider("", "","Uhhh...","Spidey could not identify a spider in this picture","icons/notaspider.png")
     else:
         return Spider("", "","Uhhh...","Spidey could not identify a spider in this picture","icons/notaspider.png")
