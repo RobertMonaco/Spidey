@@ -76,4 +76,5 @@ def analyze(file_path):
             return Spider()
         else:
             return Spider("", "","Uhhh...","Spidey could not identify a spider in this picture","icons/notaspider.png")
-            
+    else:
+        return Spider("", "","Uhhh...","Spidey could not identify a spider in this picture","icons/notaspider.png")
