@@ -1,74 +1,72 @@
-[
-    {
-        "Black widow spider": {
+{
+        "black widow spider": {
             "Scientific Name": "Latrodectus",
             "Type": "Venomous",
             "Help": "Immediately seek medical attention. Clean the wound with cold water quickly and visit the ER.\nBlack Widow spider bites are the most toxic within the United States. They resemble two faint red puncture spots and accompany swelling and redness. Within the first hour of being bitten, an individual may feel muscle pain and observe a lesion around the bite."
         },
-        "Brown recluse spider": {
+        "brown recluse spider": {
             "Scientific Name": "Loxosceles reclusa",
             "Type": "Venomous",
             "Help": "Immediately seek medical attention. Clean the wound with cold water quickly and visit the ER.\nBrown Recluse spiders produce immensely harmful venom. Their bites cause severe painful sores and if untreated will lead to necrosis and dead skin tissue around the bite mark."
         },
-        "Brown Widow Spider": {
+        "brown widow spider": {
             "Scientific Name": "Latrodectus geometricus",
             "Type": "Venomous",
             "Help": "Immediately seek medical attention. Clean the wound with cold water quickly and visit the ER.\nBrown Widow spider bites leave redness, severe pain, and bumps around the bite mark. Following the bite, muscle spasms and contractions can occur if untreated."
         },
-        "Hobo Spider": {
+        "hobo spider": {
             "Scientific Name": "Eratigena agrestis",
             "Type": "Venomous",
             "Help": "Immediately seek medical attention. Clean the wound with cold water quickly and visit the ER.\nHobo spider bites follow headaches, exhaustion, joint pain and muscle weakness. In some cases, Hobo spider bites can lead to necrosis if untreated."
         },
-        "Mediterranean Recluse Spider": {
+        "mediterranean recluse spider": {
             "Scientific Name": "Loxosceles rufescens",
             "Type": "Venomous",
             "Help": "Immediately seek medical attention. Clean the wound with cold water quickly and visit the ER.\nMediterranean Brown Recluse spider bites create painful sores, and can be followed by clotting, necrosis, and the destruction of red blood cells."
         },
-        "Northern Black Widow Spider": {
+        "northern black widow spider": {
             "Scientific Name": "Latrodectus spp.",
             "Type": "Venomous",
             "Help": "Immediately seek medical attention. Clean the wound with cold water quickly and visit the ER.\nNorthern Black Widow spider bites are the most toxic within the United States. They resemble two faint red puncture spots and accompany swelling and redness. Within the first hour of being bitten, an individual may feel muscle pain and observe a lesion around the bite."
         },
-        "Red Widow Spider": {
+        "red widow spider": {
             "Scientific Name": "Latrodectus bishopi",
             "Type": "Venomous",
             "Help": "Immediately seek medical attention. Clean the wound with cold water quickly and visit the ER.\nRed Widow spider bites can lead to sustained muscle spasms and will reoccur for a year's time if not treated properly. A clear lymph fluid will ooze from the bite accompanying redness."
         },
-        "Western Black Widow Spider": {
+        "western black widow spider": {
             "Scientific Name": "Latrodectus hesperus",
             "Type": "Venomous",
             "Help": "Immediately seek medical attention. Clean the wound with cold water quickly and visit the ER.\nWestern Black Widow spider bites are among the most venomous within North America. Bite marks may be nearly unnoticable and will be followed by intense spasmodic pain within 1-3 hours after the bite. If left untreated convulsions, tremors, and unconsciousness may result."
         },
-        "Yellow Sac Spider": {
+        "yellow sac spider": {
             "Scientific Name": "Cheiracanthium inclusum",
             "Type": "Venomous",
             "Help": "Some medical attention is needed. Clean the wound with cold water and visit your doctor. \n Yellow Sac spider bites can cause minor necrosis, kill skin tissue, and cause some major pain around the wound. Reactions to a Yellow Sac spider bite include a sore, itchiness, and swelling."
         },
-        "Arizona Blond Spider": {
+        "arizona blond spider": {
             "Scientific Name": "Aphonopelma chalcodes",
             "Type": "Non-Venomous",
             "Help": "Clean the wound, apply a cold compress, and consult a medical professional if pain persists."
         },
-        "California Ebony Spider": {
+        "california ebony spider": {
             "Scientific Name": "Aphonopelma eutylenum",
             "Type": "Non-Venomous",
             "Help": "Clean the wound, apply a cold compress, and consult a medical professional if pain persists."
         },
-        "Jumping Spider": {
+        "jumping spider": {
             "Scientific Name": "Salticidae",
             "Type": "Non-Venomous",
             "Help": "Clean the wound, apply a cold compress, and consult a medical professional if pain persists."
         },
-        "Wolf Spider": {
+        "wolf spider": {
             "Scientific Name": "Lycosidae",
             "Type": "Non-Venomous",
             "Help": "Clean the wound, apply a cold compress, and consult a medical professional if pain persists."
         },
-        "Texas Brown Spider": {
+        "texas brown spider": {
             "Scientific Name": "Aphonopelma hentzi",
             "Type": "Non-Venomous",
             "Help": "Clean the wound, apply a cold compress, and consult a medical professional if pain persists."
         }
-    }
-]
+}

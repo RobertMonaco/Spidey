@@ -65,7 +65,7 @@ def analyze(file_path):
         is_spider = False
         
         for entity in annotations.web_entities:
-            if str(entity.description) in spider_dict:
+            if str(entity.description).lower() in spider_dict:
                 #Accepted spider
                 return Spider(str(entity.description),spider_dict[str(entity.description)]["Scientific Name"]
                     ,spider_dict[str(entity.description)]["Type"],spider_dict[str(entity.description)]["Help"],"icons/" + spider_dict[str(entity.description)]["Type"].lower() +'.png')
