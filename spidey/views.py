@@ -16,17 +16,18 @@ def spidey(request):
 
             filename = 'uploads/' + request.FILES['pic'].name.replace(" ", "_").replace("(", "").replace(")", "")
 
+            print(filename)
             spider = analyze('static/' + filename)
 
             return render(request, 'spidey/spidey.html', {
                 'form': form,
                 'image': filename,
-                'spider': spider
+                'spider': spider,
             })
     else:
         form = ImageForm()
     return render(request, 'spidey/spidey.html', {
         'form': form,
         'image': '',
-        'spider': None
+        'spider': None,
     })
