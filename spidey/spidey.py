@@ -19,7 +19,7 @@ class Spider:
     def __init__(self,name = "Unidentified Spider",latin = "Unknown",venomous = "Unknown",bit_text = "If bitten by an unidentified spider you should clean the wound, apply a compress, and consult a medical professional if pain persists.", icon_path = "static/icons/unknown.png"):
         self.com_name = "Unidentified Spider"
         self.sci_name = "Unknown"
-        self.type = "Unknown"
+        self.type_spider = "Unknown"
         self.help = "If bitten by an unidentified spider you should clean the wound, apply a compress, and consult a medical professional if pain persists."
         self.icon_path = "icons/unknown.png"
 
