@@ -17,7 +17,7 @@ import logging
 MY_BUCKET = 'cs4263spidey'
 
 class Spider:
-    def __init__(self,name = "Unidentified Spider",latin = "Unknown",venomous = "Unknown",bit_text = "If bitten by an unidentified spider you should clean the wound, apply a compress, and consult a medical professional if pain persists.", icon_path = "static/icons/unknown.png"):
+    def __init__(self,name = "Unidentified Spider",latin = "Unknown",venomous = "Unknown",bit_text = "If bitten by an unidentified spider you should clean the wound, apply a compress, and consult a medical professional if pain persists.", icon_path = "icons/unknown.png"):
         self.com_name = name
         self.sci_name = latin
         self.type_spider = venomous
